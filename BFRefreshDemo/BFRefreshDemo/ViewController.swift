@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         tableView.refreshBlock = { [weak self] in
             print(self ?? "")
         }

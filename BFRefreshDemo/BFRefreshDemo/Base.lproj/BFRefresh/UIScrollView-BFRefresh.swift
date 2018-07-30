@@ -196,6 +196,7 @@ extension UIScrollView {
         }
         self.refreshNoNetworkView = rNoNetworkView
         return rNoNetworkView
+
     }
 
     // 请求错误View
@@ -211,6 +212,7 @@ extension UIScrollView {
         }
         self.refreshRequestErrorView = errorView
         return errorView
+
     }
 
     // 没有数据View
@@ -226,6 +228,7 @@ extension UIScrollView {
         }
         self.refreshNoDataView = noDataView
         return noDataView
+
     }
 
     // 加载中
@@ -233,6 +236,7 @@ extension UIScrollView {
         let loadingView = BFRefreshLoadingView()
         self.refreshLoadingView = loadingView
         return loadingView
+
     }
 
 }

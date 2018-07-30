@@ -12,6 +12,9 @@ public class BFRefreshNoDataView: UIView {
 
     public var refreshBlock: BFRefreshRefreshingBlock?
 
+    public var offsetY: CGFloat = 100
+    public var imageViewSize = CGSize.init(width: 150.0, height: 150.0)
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .white
@@ -27,8 +30,8 @@ public class BFRefreshNoDataView: UIView {
 
     override public func layoutSubviews() {
         super.layoutSubviews()
-        tipImageView.frame = CGRect.init(x: (bounds.width - 150.0) / 2.0, y: 100, width: 150.0, height: 150.0)
-        tipLabel.frame = CGRect.init(x: 0, y: tipImageView.frame.origin.y + tipImageView.frame.height + 20.0, width: bounds.width, height: 20.0)
+        tipImageView.frame = CGRect.init(x: (bounds.width - imageViewSize.width) / 2.0, y: offsetY, width: imageViewSize.width, height: imageViewSize.height)
+        tipLabel.frame = CGRect.init(x: 20, y: tipImageView.frame.origin.y + tipImageView.frame.height + 20.0, width: bounds.width - 10, height: 20.0)
     }
 
     // MARK: - Event response

@@ -13,6 +13,10 @@ public class BFRefreshNoNetworkView: UIView {
 
     public var refreshNoNetworkViewBlock: BFRefreshRefreshingBlock?
 
+    public var offsetY: CGFloat = 100
+    public var imageViewSize = CGSize.init(width: 150.0, height: 150.0)
+    public var buttonSize = CGSize.init(width: 120, height: 40)
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .white
@@ -27,9 +31,9 @@ public class BFRefreshNoNetworkView: UIView {
 
     override public func layoutSubviews() {
         super.layoutSubviews()
-        tipImageView.frame = CGRect.init(x: (bounds.width - 150.0) / 2.0, y: 100, width: 150.0, height: 150.0)
-        tipLabel.frame = CGRect.init(x: 0, y: tipImageView.frame.origin.y + tipImageView.frame.height + 20.0, width: bounds.width, height: 20.0)
-        tipButton.frame = CGRect.init(x: (bounds.width - 120) / 2.0, y: tipLabel.frame.origin.y + tipLabel.frame.height + 20.0, width: 120, height: 40)
+        tipImageView.frame = CGRect.init(x: (bounds.width - imageViewSize.width) / 2.0, y: offsetY, width: imageViewSize.width, height: imageViewSize.height)
+        tipLabel.frame = CGRect.init(x: 10, y: tipImageView.frame.origin.y + tipImageView.frame.height + 20.0, width: bounds.width - 20, height: 20.0)
+        tipButton.frame = CGRect.init(x: (bounds.width - buttonSize.width) / 2.0, y: tipLabel.frame.origin.y + tipLabel.frame.height + 20.0, width: buttonSize.width, height: buttonSize.height)
     }
 
     // MARK: - Event response
