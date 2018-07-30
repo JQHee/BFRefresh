@@ -3,8 +3,9 @@ Pod::Spec.new do |s|
 
 
   s.name         = "BFRefresh"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "列表的加载提示"
+  s.swift_version = "4.1"
 
   s.homepage     = "https://github.com/JQHee/BFRefresh"
   s.license      = "MIT"
