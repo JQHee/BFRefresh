@@ -16,7 +16,7 @@ You will need the latest developer tools in order to build `BFRefresh `. Old Xco
 
 CocoaPods is the recommended way to add BFRefresh to your project.
 
-Add a pod entry for JQProgressHUD to your Podfile.
+Add a pod entry for BFRefresh to your Podfile.
  
 ```
 pod 'BFRefresh'
