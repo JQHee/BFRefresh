@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
 
 
   s.name         = "BFRefresh"
-  s.version      = "0.0.4"
+  s.version      = "1.0"
   s.summary      = "列表的加载提示"
   s.swift_version = "4.1"
 
@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "8.0"
   s.source       = { :git => "https://github.com/JQHee/BFRefresh.git", :tag => "#{s.version}" }
   s.source_files  = "BFRefresh/**/*.swift"
-  s.resources  = "BFRefresh/Resourc/*"
+  s.resource  = "BFRefresh/Resourc/*"
   s.dependency "SnapKit"
 
 end
