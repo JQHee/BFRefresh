@@ -5,7 +5,7 @@
 
 ## Screenshots
 
-![result.gif](http://upload-images.jianshu.io/upload_images/678898-64495045d8e44869.gif?imageMogr2/auto-orient/strip)
+![result.gif](https://github.com/JQHee/BFRefresh/blob/master/result.gif)
 
 ## Requirements
 
