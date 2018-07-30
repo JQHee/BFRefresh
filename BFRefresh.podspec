@@ -12,8 +12,8 @@ Pod::Spec.new do |s|
   s.author             = { "huangjiaqian" => "18775134221@163.com" }
   s.platform     = :ios, "8.0"
   s.source       = { :git => "https://github.com/JQHee/BFRefresh.git", :tag => "#{s.version}" }
-  s.source_files  = "BFRefreshDemo/BFRefreshDemo/Base.lproj/BFRefresh/**/*.swift"
-  s.resources  = "BFRefreshDemo/BFRefreshDemo/Base.lproj/BFRefresh/Resourc/*/**"
+  s.source_files  = "BFRefresh/**/*.swift"
+  s.resources  = "BFRefresh/Resourc/*"
   s.dependency "SnapKit"
 
 end
