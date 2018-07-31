@@ -31,7 +31,7 @@ public class BFRefreshNoDataView: UIView {
     override public func layoutSubviews() {
         super.layoutSubviews()
         tipImageView.frame = CGRect.init(x: (bounds.width - imageViewSize.width) / 2.0, y: offsetY, width: imageViewSize.width, height: imageViewSize.height)
-        tipLabel.frame = CGRect.init(x: 20, y: tipImageView.frame.origin.y + tipImageView.frame.height + 20.0, width: bounds.width - 10, height: 20.0)
+        tipLabel.frame = CGRect.init(x: 10, y: tipImageView.frame.origin.y + tipImageView.frame.height + 20.0, width: bounds.width - 20, height: 20.0)
     }
 
     // MARK: - Event response
