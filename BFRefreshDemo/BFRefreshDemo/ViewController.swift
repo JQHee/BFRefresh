@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.refreshNoDataView = BFRefreshNoDataView()
         tableView.refreshBlock = { [weak self] in
             print(self ?? "")
         }
