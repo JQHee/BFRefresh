@@ -10,18 +10,17 @@ import Foundation
 import UIKit
 import SnapKit
 
+// Extension add variable
+fileprivate struct BFRefreshRuntimeKey {
+    static let refreshkey = UnsafeRawPointer.init(bitPattern: "refreshkey".hashValue)
+    static let loadTypekey = UnsafeRawPointer.init(bitPattern: "loadTypekey".hashValue)
+    static let refreshNoNetworkViewkey = UnsafeRawPointer.init(bitPattern: "refreshNoNetworkViewkey".hashValue)
+    static let refreshRequestErrorViewViewkey = UnsafeRawPointer.init(bitPattern: "refreshRequestErrorViewViewkey".hashValue)
+    static let refreshNoDataViewkey = UnsafeRawPointer.init(bitPattern: "refreshNoDataViewkey".hashValue)
+    static let loadingViewkey = UnsafeRawPointer.init(bitPattern: "loadingViewkey".hashValue)
+}
+
 public extension UIScrollView {
-
-    // Extension add variable
-    fileprivate struct BFRefreshRuntimeKey {
-        static let refreshkey = UnsafeRawPointer.init(bitPattern: "refreshkey".hashValue)
-        static let loadTypekey = UnsafeRawPointer.init(bitPattern: "loadTypekey".hashValue)
-        static let refreshNoNetworkViewkey = UnsafeRawPointer.init(bitPattern: "refreshNoNetworkViewkey".hashValue)
-        static let refreshRequestErrorViewViewkey = UnsafeRawPointer.init(bitPattern: "refreshRequestErrorViewViewkey".hashValue)
-        static let refreshNoDataViewkey = UnsafeRawPointer.init(bitPattern: "refreshNoDataViewkey".hashValue)
-        static let loadingViewkey = UnsafeRawPointer.init(bitPattern: "loadingViewkey".hashValue)
-
-    }
 
     /**
      *  设置页面显示的类型
@@ -236,7 +235,6 @@ extension UIScrollView {
         let loadingView = BFRefreshLoadingView()
         self.refreshLoadingView = loadingView
         return loadingView
-
     }
 
 }

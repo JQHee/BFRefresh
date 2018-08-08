@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class BFRefreshLoadingView: UIView {
+open class BFRefreshLoadingView: UIView {
 
     public var offsetY: CGFloat = 130
     public var indicatorSize = CGSize.init(width: 20.0, height: 20.0)
@@ -16,14 +16,19 @@ public class BFRefreshLoadingView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .white
-        addSubview(loadingView)
+        setupUI()
     }
 
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
+    
+    // MARK: - Public methods
+    open func setupUI() {
+        addSubview(loadingView)
+    }
 
-    override public func layoutSubviews() {
+    override open func layoutSubviews() {
         super.layoutSubviews()
         loadingView.frame = CGRect.init(x: (frame.width - indicatorSize.width) / 2, y: offsetY, width: indicatorSize.width, height: indicatorSize.height)
     }

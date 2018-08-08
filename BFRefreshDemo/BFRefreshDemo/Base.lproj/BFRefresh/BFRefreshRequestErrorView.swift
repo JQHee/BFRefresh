@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class BFRefreshRequestErrorView: UIView {
+open class BFRefreshRequestErrorView: UIView {
 
     public var refreshRequestErrorViewBlock: BFRefreshRefreshingBlock?
 
@@ -19,20 +19,25 @@ public class BFRefreshRequestErrorView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .white
-        addSubview(tipImageView)
-        addSubview(tipLabel)
-        addSubview(tipButton)
+        setupUI()
     }
 
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
 
-    override public func layoutSubviews() {
+    override open func layoutSubviews() {
         super.layoutSubviews()
         tipImageView.frame = CGRect.init(x: (bounds.width - imageViewSize.width) / 2.0, y: offsetY, width: imageViewSize.width, height: imageViewSize.height)
         tipLabel.frame = CGRect.init(x: 10, y: tipImageView.frame.origin.y + tipImageView.frame.height + 20.0, width: bounds.width - 20, height: 20.0)
         tipButton.frame = CGRect.init(x: (bounds.width - buttonSize.width) / 2.0, y: tipLabel.frame.origin.y + tipLabel.frame.height + 20.0, width: buttonSize.width, height: buttonSize.height)
+    }
+    
+    // MARK: - Public methods
+    open func setupUI() {
+        addSubview(tipImageView)
+        addSubview(tipLabel)
+        addSubview(tipButton)
     }
 
     // MARK: - Event response

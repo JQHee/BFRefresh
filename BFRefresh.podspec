@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
 
 
   s.name         = "BFRefresh"
-  s.version      = "1.5"
+  s.version      = "1.6"
   s.summary      = "列表的加载提示"
   s.swift_version = "4.1"
 

@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class BFRefreshNoDataView: UIView {
+open class BFRefreshNoDataView: UIView {
 
     public var refreshBlock: BFRefreshRefreshingBlock?
 
@@ -18,22 +18,31 @@ public class BFRefreshNoDataView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .white
-        addSubview(tipImageView)
-        addSubview(tipLabel)
-        let ges = UITapGestureRecognizer.init(target: self, action: #selector(refresjAction))
-        self.addGestureRecognizer(ges)
+        setupUI()
+        viewBindEvents()
     }
 
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
 
-    override public func layoutSubviews() {
+    override open func layoutSubviews() {
         super.layoutSubviews()
         tipImageView.frame = CGRect.init(x: (bounds.width - imageViewSize.width) / 2.0, y: offsetY, width: imageViewSize.width, height: imageViewSize.height)
         tipLabel.frame = CGRect.init(x: 10, y: tipImageView.frame.origin.y + tipImageView.frame.height + 20.0, width: bounds.width - 20, height: 20.0)
     }
-
+    
+    // MARK: - Public methods
+    open func setupUI() {
+        addSubview(tipImageView)
+        addSubview(tipLabel)
+    }
+    
+    open func viewBindEvents() {
+        let ges = UITapGestureRecognizer.init(target: self, action: #selector(refresjAction))
+        self.addGestureRecognizer(ges)
+    }
+    
     // MARK: - Event response
     @objc
     func refresjAction() {
