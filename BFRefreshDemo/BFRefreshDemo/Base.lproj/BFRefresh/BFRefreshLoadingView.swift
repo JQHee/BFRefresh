@@ -36,8 +36,13 @@ open class BFRefreshLoadingView: UIView {
     // MARK: - Lazy load
     public lazy var loadingView: UIActivityIndicatorView = {
         let indicatorView = UIActivityIndicatorView.init(frame: .zero)
-        let style = UIActivityIndicatorViewStyle.gray
-        indicatorView.activityIndicatorViewStyle = style
+        #if swift(>=4.2)
+        let style = UIActivityIndicatorView.Style.gray
+        indicatorView.style = style
+        #else
+            let style = UIActivityIndicatorViewStyle.gray
+            indicatorView.activityIndicatorViewStyle = style
+        #endif
         indicatorView.startAnimating()
         return indicatorView
     }()
